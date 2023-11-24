@@ -1,0 +1,38 @@
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  </style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Marks</th>
+      <th>DOB</th>
+      <th>Course</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name |   prefix: student.gender }}</td>
+      <td>{{ student.gender|uppercase }}</td>
+      <td>{{ student.marks|percent:'1.1-2' }}</td>
+      <td>{{ student.dob|date:'fullDate'}}</td>
+      <td>{{ student.course| uppercase }}</td>
+    </tr>
+  </tbody>
+</table>
